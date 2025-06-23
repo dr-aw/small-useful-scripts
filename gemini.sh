@@ -2,8 +2,8 @@
 
 # Check API-KEY:
 if [ -z "${GEMINI_API_KEY}" ]; then
-  echo "Ошибка: Переменная окружения GEMINI_API_KEY не установлена."
-  echo "Выполните: export GEMINI_API_KEY='Ваш_ключ'"
+  echo "Error: Environment variable GEMINI_API_KEY is not set."
+  echo "Run: export GEMINI_API_KEY='Your_key'"
   exit 1
 fi
 
@@ -22,7 +22,7 @@ else
 fi
 
 # Collect everything, in the beginning with something like system-prompt
-PROMPT="Пиши по делу, в спартанском стиле. Не используй markdown: *, **, \`, заголовки, списки и прочее. Выделяй важное цветом ANSI (если уместно), а не оформлением. Ответь на запрос: $*"
+PROMPT="Write concisely, in a Spartan style. Do not use markdown: *, **, \`, headers, lists, etc. Highlight important things with color. Answer the question using the language, same in the question: "
 
 #echo $PROMPT
 #echo "___________________"
@@ -37,7 +37,7 @@ RESPONSE=$(curl -s  "https://generativelanguage.googleapis.com/v1beta/models/gem
  # -d '{"contents":[{"parts":[{"text":'${PROMPT}'}]}]}'
 )
 
-# Responce
+# Response
 if [ "$RAW" -eq 1 ]; then
   echo "$RESPONSE"
 else
