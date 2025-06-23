@@ -22,7 +22,7 @@ else
 fi
 
 # Collect everything, in the beginning with something like system-prompt
-PROMPT="Write concisely, in a Spartan style. Do not use markdown: *, **, \`, headers, lists, etc. Highlight important things with color. Answer the question using the language, same in the question: "
+PROMPT="Write concisely, in a Spartan style. Do not use markdown: *, **, \`, headers, lists, etc. Highlight important things with ANSI color. Answer the question using the language, same in the question: $*"
 
 #echo $PROMPT
 #echo "___________________"
